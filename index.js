@@ -18,7 +18,6 @@ try {
     },
     json: true // Automatically stringifies the body to JSON
     };
-
     slackmessage()
     
   console.log(`The event payload: ${payload}`);
