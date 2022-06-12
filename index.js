@@ -19,9 +19,22 @@ try {
     json: true // Automatically stringifies the body to JSON
     };
 
-    const res = await rp(options)
-    console.log(res.body);
+    slackmessage()
+    
   console.log(`The event payload: ${payload}`);
 } catch (error) {
   core.setFailed(error.message);
+}
+
+const slackmessage = async () => {
+    const options = {
+        method: 'POST',
+        uri: 'https://hooks.slack.com/services/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',
+        body: {
+            text:"Hello, World!"
+        },
+        json: true // Automatically stringifies the body to JSON
+        };
+        const res = await rp(options)
+        return res;
 }
