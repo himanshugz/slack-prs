@@ -18,7 +18,7 @@ try {
 //   const payload = JSON.stringify(github.context.payload, undefined, 2)
   const options = {
     method: 'POST',
-    url: 'https://hooks.slack.com/services/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',
+    url: webhookUrl,
     data: {
         text:"Hello, World!"
     }
