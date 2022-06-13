@@ -8,6 +8,7 @@ const axios = require('axios');
 try {
   // `who-to-greet` input defined in action metadata file
   const webhookUrl = core.getInput('webhook_url');
+  
   const { GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_API_URL } = process.env;
   console.log(webhookUrl, GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_API_URL)
 //   console.log(`Hello ${nameToGreet}!`);
