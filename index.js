@@ -8,7 +8,7 @@ const axios = require('axios');
 try {
   // `who-to-greet` input defined in action metadata file
   const webhookUrl = core.getInput('webhook_url');
-  
+
   const { GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_API_URL } = process.env;
   console.log(webhookUrl, GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_API_URL)
 //   console.log(`Hello ${nameToGreet}!`);
@@ -18,11 +18,10 @@ try {
 //   const payload = JSON.stringify(github.context.payload, undefined, 2)
   const options = {
     method: 'POST',
-    uri: webhookUrl,
-    body: {
+    url: 'https://hooks.slack.com/services/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',
+    data: {
         text:"Hello, World!"
-    },
-    json: true // Automatically stringifies the body to JSON
+    }
     };
     slackmessage(options)
     
@@ -32,6 +31,7 @@ try {
 }
 
 async function slackmessage(options) {
+    console.log(options)
     try {
         await axios(options);
 
